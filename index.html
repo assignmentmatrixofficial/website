@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Assignment Matrix - Excellence Delivered</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+    body {
+      font-family: "Inter", sans-serif;
+    }
+
+    /* Offset sections for fixed navbar */
+    header,
+    section {
+      scroll-margin-top: 80px; /* height of navbar */
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-card {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+  <!-- Navigation Bar -->
+  <nav
+    class="fixed top-0 left-0 w-full bg-black bg-opacity-70 backdrop-blur-sm z-50 shadow-md"
+  >
+    <div
+      class="container mx-auto px-6 py-4 flex items-center justify-between"
+    >
+      <!-- Logo / Brand -->
+      <a
+        href="#hero"
+        class="text-white text-2xl font-extrabold tracking-wide hover:text-purple-500 transition"
+        ></a
+      >
+
+      <!-- Desktop Menu -->
+      <ul
+        class="hidden md:flex space-x-10 text-white font-semibold tracking-wide"
+      >
+        <li>
+          <a
+            href="#hero"
+            class="relative group px-1 py-2 hover:text-purple-500 transition"
+          >
+            Home
+            <span
+              class="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all"
+            ></span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#services"
+            class="relative group px-1 py-2 hover:text-purple-500 transition"
+          >
+            Services
+            <span
+              class="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all"
+            ></span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#how-it-works"
+            class="relative group px-1 py-2 hover:text-purple-500 transition"
+          >
+            How It Works
+            <span
+              class="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all"
+            ></span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#testimonials"
+            class="relative group px-1 py-2 hover:text-purple-500 transition"
+          >
+            Testimonials
+            <span
+              class="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all"
+            ></span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="relative group px-1 py-2 hover:text-purple-500 transition"
+          >
+            Contact
+            <span
+              class="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all"
+            ></span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="menu-btn"
+        aria-label="Toggle menu"
+        class="md:hidden text-white focus:outline-none"
+      >
+        <i class="fas fa-bars text-3xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden bg-black bg-opacity-90 backdrop-blur-sm shadow-inner"
+    >
+      <ul
+        class="flex flex-col space-y-6 p-6 text-white font-semibold tracking-wide text-lg"
+      >
+        <li><a href="#hero" class="block hover:text-purple-500 transition">Home</a></li>
+        <li>
+          <a href="#services" class="block hover:text-purple-500 transition"
+            >Services</a
+          >
+        </li>
+        <li>
+          <a href="#how-it-works" class="block hover:text-purple-500 transition"
+            >How It Works</a
+          >
+        </li>
+        <li>
+          <a href="#testimonials" class="block hover:text-purple-500 transition"
+            >Testimonials</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="block hover:text-purple-500 transition"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+
+  <!-- Logo at Top Left -->
+  <div class="absolute top-4 left-4 z-50">
+    <img
+      src="https://i.postimg.cc/JzxPmZqH/LOGOIMP.png"
+      alt="Assignment Matrix Logo"
+      class="h-32 w-auto"
+    />
+  </div>
+
+  <!-- Hero Section -->
+  <header
+    id="hero"
+    class="min-h-screen flex items-center justify-center bg-black relative overflow-hidden"
+  >
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-gray-900 to-black opacity-50"
+    ></div>
+    <div class="container mx-auto px-6 text-center relative z-10">
+      <h1
+        style="font-family: 'Poppins', sans-serif;"
+        class="text-6xl md:text-8xl font-bold mb-6 tracking-tight"
+      >
+        Assignment Matrix
+      </h1>
+      <p
+        style="font-family: 'Open Sans', sans-serif;"
+        class="text-2xl md:text-3xl font-light mb-4 text-gray-300"
+      >
+        Excellence Delivered.
+      </p>
+      <p
+        style="font-family: 'Open Sans', sans-serif;"
+        class="text-lg md:text-xl mb-12 text-gray-400 max-w-2xl mx-auto"
+      >
+        Academic Support You Can Rely On – UAE Based & Globally Available
+      </p>
+      <a
+  href="https://wa.me/971566047193"
+  class="inline-flex items-center bg-black border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105"
+>
+  <i class="fab fa-whatsapp text-green-500 mr-3 text-xl"></i>
+  Chat on WhatsApp
+</a>
+
+    </div>
+  </header>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-white text-black">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+        Services We Offer
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div
+          class="service-card bg-gray-50 p-6 rounded-lg text-center border-2 border-gray-200 hover:border-black transition-all duration-300"
+        >
+          <i class="fas fa-pen-fancy text-4xl mb-4 text-black"></i>
+          <h3 class="text-xl font-semibold">Assignments</h3>
+        </div>
+        <div
+          class="service-card bg-gray-50 p-6 rounded-lg text-center border-2 border-gray-200 hover:border-black transition-all duration-300"
+        >
+          <i class="fas fa-book text-4xl mb-4 text-black"></i>
+          <h3 class="text-xl font-semibold">Essays</h3>
+        </div>
+        <div
+          class="service-card bg-gray-50 p-6 rounded-lg text-center border-2 border-gray-200 hover:border-black transition-all duration-300"
+        >
+          <i class="fas fa-code text-4xl mb-4 text-black"></i>
+          <h3 class="text-xl font-semibold">Coding Help</h3>
+          <p class="text-sm text-gray-600 mt-2">Python, Java, C++</p>
+        </div>
+        <div
+          class="service-card bg-gray-50 p-6 rounded-lg text-center border-2 border-gray-200 hover:border-black transition-all duration-300"
+        >
+          <i class="fas fa-flask text-4xl mb-4 text-black"></i>
+          <h3 class="text-xl font-semibold">FYP & Capstone Projects</h3>
+        </div>
+        <div
+          class="service-card bg-gray-50 p-6 rounded-lg text-center border-2 border-gray-200 hover:border-black transition-all duration-300"
+        >
+          <i class="fas fa-graduation-cap text-4xl mb-4 text-black"></i>
+          <h3 class="text-xl font-semibold">Thesis & Dissertation</h3>
+        </div>
+        <div
+          class="service-card bg-gray-50 p-6 rounded-lg text-center border-2 border-gray-200 hover:border-black transition-all duration-300"
+        >
+          <i class="fas fa-chart-line text-4xl mb-4 text-black"></i>
+          <h3 class="text-xl font-semibold">Reports & Case Studies</h3>
+        </div>
+        <div
+          class="service-card bg-gray-50 p-6 rounded-lg text-center border-2 border-gray-200 hover:border-black transition-all duration-300"
+        >
+          <i class="fas fa-edit text-4xl mb-4 text-black"></i>
+          <h3 class="text-xl font-semibold">Rewriting Services</h3>
+        </div>
+        <div
+          class="service-card bg-gray-50 p-6 rounded-lg text-center border-2 border-gray-200 hover:border-black transition-all duration-300"
+        >
+          <i class="fas fa-sticky-note text-4xl mb-4 text-black"></i>
+          <h3 class="text-xl font-semibold">Notes & Slides</h3>
+        </div>
+        <div
+          class="service-card bg-gray-50 p-6 rounded-lg text-center border-2 border-gray-200 hover:border-black transition-all duration-300"
+        >
+          <i class="fas fa-spell-check text-4xl mb-4 text-black"></i>
+          <h3 class="text-xl font-semibold">Proofreading & Editing</h3>
+        </div>
+      </div>
+      <div class="text-center">
+        <p class="text-lg font-semibold text-purple-600">
+          🟣 All content is custom-written & plagiarism-free.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="py-20 bg-black">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+        How It Works
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div class="text-center">
+          <div
+            class="bg-white text-black w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold"
+          >
+            1
+          </div>
+          <h3 class="text-xl font-semibold mb-4">📩 Send us your task on WhatsApp</h3>
+          <p class="text-gray-400">Share your assignment details and requirements</p>
+        </div>
+        <div class="text-center">
+          <div
+            class="bg-white text-black w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold"
+          >
+            2
+          </div>
+          <h3 class="text-xl font-semibold mb-4">
+            💬 Receive a quote, timeline & free consultation
+          </h3>
+          <p class="text-gray-400">Get transparent pricing and expert advice</p>
+        </div>
+        <div class="text-center">
+          <div
+            class="bg-white text-black w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold"
+          >
+            3
+          </div>
+          <h3 class="text-xl font-semibold mb-4">✅ Approve & get it delivered on time</h3>
+          <p class="text-gray-400">Quality work delivered when you need it</p>
+        </div>
+      </div>
+      <p class="text-center text-lg text-gray-300">
+        All interactions are private, 1-to-1, and secure.
+      </p>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-20 bg-white text-black">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+        Student Testimonials
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="testimonial-card p-6 rounded-lg">
+          <div class="text-yellow-500 text-xl mb-4">⭐⭐⭐⭐⭐</div>
+          <p class="mb-4 italic">
+            "Saved me during finals! Super professional and responsive."
+          </p>
+          <p class="font-semibold">– Zainab A., Abu Dhabi</p>
+        </div>
+        <div class="testimonial-card p-6 rounded-lg">
+          <div class="text-yellow-500 text-xl mb-4">⭐⭐⭐⭐⭐</div>
+          <p class="mb-4 italic">"Got my thesis proofread in two days. Highly recommend!"</p>
+          <p class="font-semibold">– Ahmed R., Dubai</p>
+        </div>
+        <div class="testimonial-card p-6 rounded-lg">
+          <div class="text-yellow-500 text-xl mb-4">⭐⭐⭐⭐⭐</div>
+          <p class="mb-4 italic">"No plagiarism and perfect formatting. Will use again."</p>
+          <p class="font-semibold">– Fatima S., Sharjah</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Trust Us Section -->
+  <section class="py-20 bg-black">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+        Why Students Trust Us
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="text-center">
+          <i
+            class="fas fa-check-circle text-4xl text-green-500 mb-4"
+          ></i>
+          <h3 class="text-xl font-semibold mb-2">✅ 100% Original Content</h3>
+        </div>
+        <div class="text-center">
+          <i class="fas fa-clock text-4xl text-blue-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">🕓 On-Time Delivery</h3>
+        </div>
+        <div class="text-center">
+          <i
+            class="fas fa-graduation-cap text-4xl text-purple-500 mb-4"
+          ></i>
+          <h3 class="text-xl font-semibold mb-2">🎓 Academic Formatting</h3>
+          <p class="text-gray-400 text-sm">APA, Harvard, MLA, etc.</p>
+        </div>
+        <div class="text-center">
+          <i class="fas fa-lock text-4xl text-red-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">🔒 Full Confidentiality</h3>
+        </div>
+        <div class="text-center">
+          <i class="fas fa-flag text-4xl text-green-600 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">🇦🇪 UAE-Focused Team</h3>
+        </div>
+        <div class="text-center">
+          <i class="fab fa-whatsapp text-4xl text-green-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">📱 Always Available on WhatsApp</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- No Bots Section -->
+  <section class="py-16 bg-white text-black">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        🛑 No Bots. No Templates. Only Humans.
+      </h2>
+      <p class="text-xl text-gray-600">
+        Real subject experts. Real results. Real support.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-black">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Contact Us</h2>
+      <div class="max-w-2xl mx-auto text-center space-y-6">
+        <div class="flex items-center justify-center space-x-4">
+  <i class="fab fa-whatsapp text-green-500 text-2xl"></i>
+  <span class="text-xl">📱 WhatsApp: +971566047193</span>
+</div>
+
+        <div class="flex items-center justify-center space-x-4">
+          <i class="fas fa-envelope text-blue-500 text-2xl"></i>
+          <span class="text-xl">📧 Email: assignmentmatrixofficial@gmail.com</span>
+        </div>
+        <div class="flex items-center justify-center space-x-4">
+          <i class="fab fa-instagram text-pink-500 text-2xl"></i>
+          <span class="text-xl">📸 Instagram: @assignmentmatrix</span>
+        </div>
+        <div class="mt-8">
+          <p class="text-lg text-gray-300">
+            Working Hours: 9 AM – 12 Midnight (Gulf Time)
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <section class="py-12 bg-gray-900">
+    <div class="container mx-auto px-6">
+      <h3 class="text-2xl font-bold text-center mb-6">📢 Disclaimer</h3>
+      <p class="text-center text-gray-400 max-w-4xl mx-auto">
+        Our services are provided strictly for academic assistance, referencing,
+        and learning support. Clients are responsible for using our content
+        ethically and within institutional guidelines.
+      </p>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp Button -->
+<div class="floating-whatsapp">
+  <a
+    href="https://wa.me/971566047193"
+    class="bg-black border-2 border-green-500 text-green-500 w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-500 hover:text-white transition-all duration-300"
+    title="Need Help? Chat with Assignment Matrix"
+  >
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+</div>
+
+
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document
+          .querySelector(this.getAttribute("href"))
+          .scrollIntoView({ behavior: "smooth" });
+      });
+    });
+
+    // Add hover effects to service cards
+    document.querySelectorAll(".service-card").forEach((card) => {
+      card.addEventListener("mouseenter", function () {
+        this.style.transform = "translateY(-5px)";
+        this.style.boxShadow = "0 10px 25px rgba(0,0,0,0.1)";
+      });
+
+      card.addEventListener("mouseleave", function () {
+        this.style.transform = "translateY(0)";
+        this.style.boxShadow = "none";
+      });
+    });
+  </script>
+
+  <script>
+    (function () {
+      function c() {
+        var b = a.contentDocument || a.contentWindow.document;
+        if (b) {
+          var d = b.createElement("script");
+          d.innerHTML =
+            "window.__CF$cv$params={r:'968e69af02d72e9b',t:'MTc1NDE0NjQ5MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+          b.getElementsByTagName("head")[0].appendChild(d);
+        }
+      }
+      if (document.body) {
+        var a = document.createElement("iframe");
+        a.height = 1;
+        a.width = 1;
+        a.style.position = "absolute";
+        a.style.top = 0;
+        a.style.left = 0;
+        a.style.border = "none";
+        a.style.visibility = "hidden";
+        document.body.appendChild(a);
+        if ("loading" !== document.readyState) c();
+        else if (window.addEventListener)
+          document.addEventListener("DOMContentLoaded", c);
+        else {
+          var e = document.onreadystatechange || function () {};
+          document.onreadystatechange = function (b) {
+            e(b);
+            "loading" !== document.readyState && (document.onreadystatechange = e), c();
+          };
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
